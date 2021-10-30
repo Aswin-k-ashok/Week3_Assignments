@@ -1,8 +1,10 @@
+var r = require("readline-sync");
 
-var p =parseInt(prompt("enter the principle amount"));
-var n =parseInt(prompt("enter the number of terms"));
-var r =parseInt(prompt("enter a the rate of interest"))
+var mark= r.questionInt("enter your mark: ");
 
-var si=(p*r*n)/100;
-
-document.write("simple interest is: "+si);
+if (mark>50){
+    console.log("you have passed");
+}
+else{
+    console.log("you have failed");
+}
