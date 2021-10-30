@@ -1,7 +1,8 @@
 
-num1 =parseInt(prompt("enter the first number"));
-num2 =parseInt(prompt("enter the second number"));
+var p =parseInt(prompt("enter the principle amount"));
+var n =parseInt(prompt("enter the number of terms"));
+var r =parseInt(prompt("enter a the rate of interest"))
 
-var sum =num1+num2;
+var si=(p*r*n)/100;
 
-document.write("sum of ",num1," and ",num2," is ", sum);
+document.write("simple interest is: "+si);
