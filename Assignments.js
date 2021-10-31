@@ -1,13 +1,16 @@
-const r = require('readline-sync');
+var pat=' ';
 
-var limit = r.questionInt("enter the limit: ");
-
-var sum=0;
-
-for(var i=1;i<limit;i++){
-    if(i%2!=0){
-        sum+=i;
+for(var i=1;i<=5;i++){
+    for(var j=1;j<=i;j++){
+        pat+= j;
     }
+    console.log(pat);
+    pat=' ';
 }
 
-console.log("sum of odd numbers is = "+sum);
+// for(var i=1;i<=5;i++){
+//     for(j=1;j<=i;j++){
+//         document.write(j);
+//     }
+//     document.write("<br>");
+// }
