@@ -1,26 +1,29 @@
 const r = require("readline-sync");
 
-var mark= r.questionInt("enter your mark percentage: ");
+var day = r.questionInt("enter the day number: ");
 
-if (mark>100){
-    console.log("enter a valid mark");
+switch(day){
+    case 1:
+        console.log("sunday");
+    break;
+    case 2:
+        console.log("monday");
+    break;
+    case 3:
+        console.log("tuesday");
+    break;
+    case 4:
+        console.log("wednesday");
+    break;
+    case 5:
+        console.log("thursday");
+    break;
+    case 6:
+        console.log("friday");
+    break;
+    case 7:
+        console.log("saturday");
+    break;
+    default:
+        console.log("enter a valid day");
 }
-else if(mark>89){
-    console.log("A grade");
-}
-else if(mark>79){
-    console.log("B grade");
-}
-else if(mark>69){
-    console.log("C grade");
-}
-else if(mark>59){
-    console.log("D grade");
-}
-else if(mark>49){
-    console.log("E grade");
-}
-else{
-    console.log("you have failed");
-}
-
