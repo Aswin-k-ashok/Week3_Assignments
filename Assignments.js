@@ -1,6 +1,6 @@
 const r = require("readline-sync");
 
-var mark= r.questionInt("enter your mark percentage: ");
+var mark= r.questionFloat("enter your mark percentage: ");
 
 if (mark>100){
     console.log("enter a valid mark");
