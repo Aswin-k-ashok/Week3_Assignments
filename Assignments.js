@@ -1,20 +1,39 @@
-var word = r.question("enter a string: ");
-var length = word.length;
-flag=0;
- 
-for(i=0,j=length-1;i!=length;i++,j--){
-    if(word[i]!=word[j]){
-        flag=1;
-        break;
+const r= require('readline-sync');
+limit = r.questionInt("enter the array size: ");
+
+
+
+var arry1=[];
+var arry2=[];
+var sum=[];
+var disp="";
+
+console.log ("enter the values of the first array: ");
+
+for(var i=0;i<limit;i++){
+    arry1[i] = [];
+    for(var j=0;j<limit;j++){
+        arry1[i][j]= r.questionInt(" ");
     }
-    else{
-        flag =0;
+}
+
+console.log("enter the values of the second array: ");
+
+for(var i=0;i<limit;i++){
+    arry2[i]=[];
+    for(var j=0;j<limit;j++){
+        arry2[i][j]=r.questionInt(" ");
     }
 }
- 
-if(flag==1){
-    console.log("the entered word is not a palinderome: ");
+
+for(var i=0;i<limit;i++){
+    sum[i]=[];
+    for(var j=0;j<limit;j++){
+        sum[i][j] = arry1[i][j]+arry2[i][j];
+        
+    }
 }
-else{
-    console.log("the enterd word is a plaindrome: ");
-}
+
+
+console.log(sum);
+
