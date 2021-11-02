@@ -1,23 +1,20 @@
-const r = require('readline-sync');
+var word = r.question("enter a string: ");
+var length = word.length;
+flag=0;
  
-var ary = [];
-var temp;
-var limit = r.questionInt("enter the array size: ");
- 
-console.log("enter the array elements: ");
- 
-for (var i=0;i<limit;i++){
-    ary.push(r.questionInt(""));
-}
- 
-for(var i=0;i<limit;i++){
-    for(var j=i+1;j<limit;j++){
-        if (ary[j]>ary[i]){
-            temp=ary[j];
-            ary[j]=ary[i];
-            ary[i]=temp;
-        }
+for(i=0,j=length-1;i!=length;i++,j--){
+    if(word[i]!=word[j]){
+        flag=1;
+        break;
+    }
+    else{
+        flag =0;
     }
 }
  
-console.log(ary);
+if(flag==1){
+    console.log("the entered word is not a palinderome: ");
+}
+else{
+    console.log("the enterd word is a plaindrome: ");
+}
