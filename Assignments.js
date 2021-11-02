@@ -1,21 +1,53 @@
 const r = require('readline-sync');
 
-var arry=[];
-arry=getArray(arry);
+console.log("enter 2 numbers: ");
 
-displayArray(arry);
+var num1 = r.questionInt("");
+var num2 = r.questionInt("");
 
 
-function getArray(arry){
-    var lmt= r.questionInt("enter the array size: ");
-    console.log("enter the array elements: ");
-    for(var i=0;i<lmt;i++){
-        arry.push(r.questionInt(" "));
-        
+class result {
+
+    add(num1, num2) {
+        var res = num1 + num2;
+        return res;
     }
-    return arry;
+    sub(num1, num2) {
+        var res = num1 - num2;
+        return res;
+    }
+    mul(num1, num2) {
+        var res = num1 * num2;
+        return res;
+    }
+    div(num1, num2) {
+        var res = num1 / num2;
+        return res;
+    }
 }
- 
-function displayArray(arry){
-    console.log(arry);
+
+var obj = new result();
+console.log("1:addition \n2:subtraction\n3:multiplication\n4:division")
+var choice=r.questionInt("enter your choice: ");
+
+
+switch(choice){
+    case 1:
+        var sum = obj.add(num1, num2);
+        break;
+
+    case 2:
+        var sum =obj.sub(num1,num2);
+        break;
+
+    case 3:
+        var sum =obj.mul(num1,num2);
+        break;
+    case 3:
+        var sum =obj.div(num1,num2);
+        break;
 }
+
+
+
+console.log(sum);
