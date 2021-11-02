@@ -1,25 +1,23 @@
 const r = require('readline-sync');
-var limit = r.questionInt("enter the array size: ");
-var ary1 = [];
-var ary2 = [];
-
-for(var i=0;i<limit;i++){
-    ary1.push(r.questionInt("enter the 1st array elements "));
-}
-
-console.log(" ");
-
-for(var i=0;i<limit;i++){
-    ary2.push(r.questionInt("enter the 2nd array elements "));
-}
-
+ 
+var ary = [];
 var temp;
-
-for(var i=0;i<limit;i++){
-    temp=ary1[i];
-    ary1[i]=ary2[i];
-    ary2[i]=temp;
+var limit = r.questionInt("enter the array size: ");
+ 
+console.log("enter the array elements: ");
+ 
+for (var i=0;i<limit;i++){
+    ary.push(r.questionInt(""));
 }
-
-console.log("array 1 = ",ary1);
-console.log("array 2 = ",ary2);
+ 
+for(var i=0;i<limit;i++){
+    for(var j=i+1;j<limit;j++){
+        if (ary[j]>ary[i]){
+            temp=ary[j];
+            ary[j]=ary[i];
+            ary[i]=temp;
+        }
+    }
+}
+ 
+console.log(ary);
