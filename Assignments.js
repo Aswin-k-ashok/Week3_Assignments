@@ -1,15 +1,13 @@
 const r = require('readline-sync');
 
-let my_string = r.question("enter a string: ");
-let my_num = r.questionInt("enter a number: ");
+let my_height = r.question("enter a your height: ");
 
 try{
-    console.log(my_string.split('').reverse().join(''));
-    console.log(my_num.split('').reverse().join(''));
+    if(isNaN(my_height)) throw "must be a number"
+    else if(my_height>250) throw "Huge height error"
+    else if(my_height<50) throw "Tiny height error"
+    else console.log(my_height);
 }
 catch(err){
-    console.log("numbers are not allowd: ")
-}
-finally{
-    console.log(typeof my_string);
+    console.log(err)
 }
