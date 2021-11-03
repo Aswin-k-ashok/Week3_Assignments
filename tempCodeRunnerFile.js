@@ -1,36 +1,62 @@
+const r = require('readline-sync');
 
-const r =require('readline-sync');
 
-class arrydisp{
-     getArray(arry,size){
-        for(var i=0;i<size;i++){
-            arry[i]=[];
-            for(var j=0;j<size;j++){
-                arry[i][j]=r.questionInt(" ")
-            }
-        }
-        return arry;
+class Area{
+    circle(r){
+        let area = 3.14*r*r;
+        console.log(area);
     }
-    
-     displayArray(arry1,size){
-        for(var i=0;i<size;i++){
-            for(var j=0;j<size;j++){
-                process.stdout.write(" "+arry1[i][j]);
-            }
-            console.log();
-        }
+    square(a){
+        let area = 4*a;
+        console.log(area);
+    }
+    rectangle(l,b){
+        let area = l*b;
+        console.log(area);
+    }
+    triangle(b,h){
+        let area = b*h/2;
+        console.log(area);
     }
 }
 
-var arry1 = [];
+class MyClass extends Area{
+    main(){
+        console.log("1: circle\n2: square\n3: rectangle\n4: triangle");
+        var choice = r.questionInt("enter a choice: ");
 
-var obj = new arrydisp;
+        switch(choice){
+            case 1:
+                let rad=r.questionInt("enter the radius: ");
+                obj.circle(rad);
+            break;
 
-var size=r.questionInt("enter the array size: ");
+            case 2:
+                let sid=r.questionInt("enter the length: ");
+                obj.square(sid);
+            break;
 
-console.log("enter the array elements: ");
+            case 3:
+                let len=r.questionInt("enter the length: ");
+                let bre=r.questionInt("enter the bredth: ");
+                obj.rectangle(len,bre);
+            break;
+            
+            case 4:
+                let hei=r.questionInt("enter the height: ");
+                let bas=r.questionInt("enter the base: ");
+                obj.triangle(hei,bas);
+            break;
 
-arry1=obj.getArray(arry1,size);
 
-console.log("enterd array is: ");
-obj.displayArray(arry1,size);
+        }
+        
+    }
+}
+
+let obj = new MyClass;
+
+obj.main();
+
+
+
