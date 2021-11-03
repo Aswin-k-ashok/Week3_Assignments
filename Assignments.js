@@ -1,13 +1,13 @@
-const r = require('readline-sync');
-
-let my_height = r.question("enter a your height: ");
-
-try{
-    if(isNaN(my_height)) throw "must be a number"
-    else if(my_height>250) throw "Huge height error"
-    else if(my_height<50) throw "Tiny height error"
-    else console.log(my_height);
+function car(name,mileage, max_speed){
+    this.name=name
+    this.mileage=mileage
+    this.max_speed=max_speed
+    this.display=function(){
+        console.log("name: "+name+" "+"milage: "+mileage+" "+"max-speed: "+max_speed)
+    }
 }
-catch(err){
-    console.log(err)
-}
+
+var obj1=new car("fiat",18,140)
+var obj2=new car("civic",17,180)
+obj1.display()
+obj2.display()
