@@ -1,9 +1,19 @@
-const r = require("readline-sync");
+const r = require('readline-sync');
+var arry1=[];
+var arry2=[];
 
-var wt = r.questionInt("enter the written text mark: ");
-var le = r.questionInt("enter the lab exam marks: ");
-var as = r.questionInt("enter the assignmet mark: ");
+var limit = r.questionInt("enter the array size: ");
+ 
+console.log("enter the array elements: ");
 
-var grade =(wt*70)/100 + (le*20)/100 + (as*10)/100;
+for(var i=0;i<limit;i++){
+    arry1.push(r.questionInt(" "))
+}
 
-console.log("grade of the student: ",grade);
+for(var i=1,j=i+1;i<limit;i++,j++){
+    arry2.push(i*j);
+}
+
+console.log(arry2);
+
+
