@@ -1,7 +1,8 @@
+const r = require('readline-sync')
 
-num1 =parseInt(prompt("enter the first number"));
-num2 =parseInt(prompt("enter the second number"));
+let num1 = r.questionInt("enter first number: ");
 
-var sum =num1+num2;
+let num2 = r.questionFloat("enter second number: ");
 
-document.write("sum of ",num1," and ",num2," is ", sum);
+let sum = console.log(("sum is ",num1+num2))
+
