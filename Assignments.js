@@ -1,13 +1,35 @@
-function car(name,mileage, max_speed){
-    this.name=name
-    this.mileage=mileage
-    this.max_speed=max_speed
-    this.display=function(){
-        console.log("name: "+name+" "+"milage: "+mileage+" "+"max-speed: "+max_speed)
-    }
+var r = require('readline-sync');
+
+var length = Number(r.question("enter the array limit: "));
+var myArray= [];
+
+console.log('enter the array elements : ')
+
+for (let i=0;i<length;i++){
+    myArray.push(Number(r.question()))
 }
- 
-var obj1=new car("fiat",18,140)
-var obj2=new car("civic",17,180)
-obj1.display()
-obj2.display()
+
+var sum =0;
+
+function sumArray(myArray){
+    for(var i=0;i<length;i++){
+        sum=sum+myArray[i];
+    }
+    return sum;
+}
+
+function myFilter(myArray,callback){
+    var x=0
+    var sum=sumArray(myArray);
+    console.log(sum);
+    if(sum%2==0){
+        x++
+        console.log(Boolean(x))
+    }
+    else{
+        console.log(Boolean(x))
+    }
+
+}
+
+myFilter(myArray,sumArray);
